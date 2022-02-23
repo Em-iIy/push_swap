@@ -6,7 +6,7 @@ FILES_OBJS = $(FILES_SRCS:.c=.o)
 # Directories
 DIR_SRCS = ./srcs/
 DIR_OBJS = ./objs/
-DIR_LIBFT =./Libft/
+DIR_LIBFT =./libft/
 vpath %.c $(DIR_SRCS)
 
 # Sources

@@ -6,11 +6,11 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:27:50 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/02/23 15:08:44 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/02/23 15:32:21 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Libft/libft.h"
+#include "../libft/libft.h"
 
 int	main(void)
 {
