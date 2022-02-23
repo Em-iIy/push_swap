@@ -6,7 +6,7 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:27:52 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/02/23 16:07:02 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/02/23 18:05:59 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ typedef struct s_stack
 	t_node	*stack_b;
 }	t_stack;
 
+// Errors
 void	error_exit(int code);
+
+// Parsing input
+void	parse_input(t_stack *stack, int argc, char **argv);
+int		parse_input_bin(int argc, char **argv);
 
 #endif
