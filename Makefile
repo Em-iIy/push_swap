@@ -1,5 +1,8 @@
 #----------------------------------------Files
-FILES_SRCS = push_swap.c \
+FILES_SRCS =	push_swap.c \
+				error_exit.c \
+				parse_input.c \
+				parse_input_binary.c \
 
 FILES_OBJS = $(FILES_SRCS:.c=.o)
 
@@ -20,7 +23,8 @@ LIBFT = $(DIR_LIBFT)libft.a
 
 #----------------------------------------Flags
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+# CFLAGS = -Wall -Wextra -Werror
+INC = -Ilibft
 
 #----------------------------------------Name
 NAME = push_swap
@@ -28,11 +32,11 @@ NAME = push_swap
 #----------------------------------------Making
 all: $(NAME)
 
-$(NAME): $(DIR_OBJS) $(OBJS) $(LIBFT)
-	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+$(NAME): $(DIR_OBJS) $(LIBFT) $(OBJS) 
+	@$(CC) $(CFLAGS) $(INC) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(DIR_OBJS)%.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 #------------------------------Directories
 $(DIR_OBJS):
