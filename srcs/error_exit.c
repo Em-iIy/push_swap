@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   error_exit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 14:27:52 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/02/23 16:07:02 by gwinnink         ###   ########.fr       */
+/*   Created: 2022/02/23 15:57:40 by gwinnink          #+#    #+#             */
+/*   Updated: 2022/02/23 16:07:30 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
+#include "../libft/libft.h"
+#include <stdlib.h>
 
-// Error codes
-enum e_error
+void	error_exit(int code)
 {
-	MALLOC_ERROR = -1,
-	TOO_FEW_ARGUMENTS = 1
-};
-
-typedef struct s_node
-{
-	char	*num;
-	void	*next;
-}	t_node;
-
-// Stack
-typedef struct s_stack
-{
-	t_node	*stack_a;
-	t_node	*stack_b;
-}	t_stack;
-
-void	error_exit(int code);
-
-#endif
+	ft_putstr_fd("Error:\n", 1);
+	if (code == MALLOC_ERROR)
+		ft_putstr_fd("Ran out of memory", 1);
+	else if (code == TOO_FEW_ARGUMENTS)
+		ft_putstr_fd("Too few arguments", 1);
+	exit(code);
+}

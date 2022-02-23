@@ -1,31 +1,31 @@
-# Files
+#----------------------------------------Files
 FILES_SRCS = push_swap.c \
 
 FILES_OBJS = $(FILES_SRCS:.c=.o)
 
-# Directories
+#----------------------------------------Directories
 DIR_SRCS = ./srcs/
 DIR_OBJS = ./objs/
 DIR_LIBFT =./libft/
 vpath %.c $(DIR_SRCS)
 
-# Sources
+#----------------------------------------Sources
 SRCS = $(FILES_SRCS:%=$(DIR_SRCS)%)
 
-# Objects
+#----------------------------------------Objects
 OBJS = $(FILES_OBJS:%=$(DIR_OBJS)%)
 
-# Libraries
+#----------------------------------------Libraries
 LIBFT = $(DIR_LIBFT)libft.a
 
-# Flags
+#----------------------------------------Flags
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-# Name
+#----------------------------------------Name
 NAME = push_swap
 
-## Making
+#----------------------------------------Making
 all: $(NAME)
 
 $(NAME): $(DIR_OBJS) $(OBJS) $(LIBFT)
@@ -34,16 +34,16 @@ $(NAME): $(DIR_OBJS) $(OBJS) $(LIBFT)
 $(DIR_OBJS)%.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-# Directories
+#------------------------------Directories
 $(DIR_OBJS):
 	@mkdir -p $@
 
-# Libraries
+#------------------------------Libraries
 $(LIBFT):
 	@echo "Compiling libft..."
 	@make -C $(DIR_LIBFT)
 
-## Cleaning
+#----------------------------------------Cleaning
 clean:
 	@make -C $(DIR_LIBFT) clean
 	@rm -f $(OBJS)
