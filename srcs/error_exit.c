@@ -6,12 +6,12 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 15:57:40 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/02/23 16:07:30 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/02/23 17:04:36 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "push_swap.h"
-#include "../libft/libft.h"
 #include <stdlib.h>
 
 void	error_exit(int code)

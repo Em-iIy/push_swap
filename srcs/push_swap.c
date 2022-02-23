@@ -6,13 +6,18 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:27:50 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/02/23 15:32:21 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/02/23 17:03:02 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "libft.h"
+#include "push_swap.h"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	ft_putstr_fd("Hello", 1);
+	t_stack	stacks;
+
+	if (argc < 2)
+		error_exit(TOO_FEW_ARGUMENTS);
+	parse_input(&stacks, argc, argv);
 }
