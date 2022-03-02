@@ -3,6 +3,8 @@ FILES_SRCS =	push_swap.c \
 				error_exit.c \
 				parse_input.c \
 				parse_input_binary.c \
+				list_utils.c \
+				
 
 FILES_OBJS = $(FILES_SRCS:.c=.o)
 
@@ -24,6 +26,7 @@ LIBFT = $(DIR_LIBFT)libft.a
 #----------------------------------------Flags
 CC = gcc
 # CFLAGS = -Wall -Wextra -Werror
+CFLAGS += -g
 INC = -Ilibft
 
 #----------------------------------------Name
