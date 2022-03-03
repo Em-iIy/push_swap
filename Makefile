@@ -4,7 +4,7 @@ FILES_SRCS =	push_swap.c \
 				parse_input.c \
 				parse_input_binary.c \
 				list_utils.c \
-				
+				push.c \
 
 FILES_OBJS = $(FILES_SRCS:.c=.o)
 
