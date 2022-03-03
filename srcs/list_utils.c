@@ -6,7 +6,7 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 12:56:05 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/02 14:27:41 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/03 12:25:28 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,12 @@ void	node_add_back(t_node **node, t_node *new)
 		*node = new;
 	else
 		node_last(*node)->next = new;
-	printf("%s added\n", **node.num); // gotta make this work
+}
+
+void	node_add_front(t_node **node, t_node *new)
+{
+	new->next = *node;
+	*node = new;
 }
 
 size_t	node_size(t_node *node)
