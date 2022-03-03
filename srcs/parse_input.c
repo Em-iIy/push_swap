@@ -6,13 +6,13 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:10:21 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/03 12:51:52 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:06:57 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
-#include <stdio.h>
+#include <stdio.h> // remove
 
 static void	fill_stack_a(t_node **stack_a, int argc, char **argv)
 {

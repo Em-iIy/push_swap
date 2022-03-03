@@ -6,13 +6,13 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 12:56:05 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/03 12:25:28 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/03 18:28:30 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
-#include <stdio.h>
+#include <stdio.h> // remove
 
 t_node	*node_new(char *num)
 {

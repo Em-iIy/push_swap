@@ -5,6 +5,10 @@ FILES_SRCS =	push_swap.c \
 				parse_input_binary.c \
 				list_utils.c \
 				op_push.c \
+				op_swap.c \
+				op_rotate.c \
+				op_rrotate.c \
+				op_choose.c \
 
 FILES_OBJS = $(FILES_SRCS:.c=.o)
 
