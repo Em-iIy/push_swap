@@ -6,7 +6,7 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:27:52 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/03 12:47:43 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:05:26 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,22 @@ enum e_error
 {
 	MALLOC_ERROR = -1,
 	TOO_FEW_ARGUMENTS = 1
+};
+
+// Operation names
+enum e_op
+{
+	OP_PA,
+	OP_PB,
+	OP_SA,
+	OP_SB,
+	OP_SS,
+	OP_RA,
+	OP_RB,
+	OP_RR,
+	OP_RRA,
+	OP_RRB,
+	OP_RRR
 };
 
 typedef struct s_node
@@ -50,8 +66,21 @@ void	parse_input(t_stack *stack, int argc, char **argv);
 int		parse_input_bin(int argc, char **argv);
 
 // Operations
-// Push
-void	push_b(t_stack *stack);
-void	push_a(t_stack *stack);
+char	*choose_op(t_stack *stack, int code);
+// Push (pa, pb)
+int		push_b(t_stack *stack);
+int		push_a(t_stack *stack);
+// Swap (sa, sb, ss)
+int		swap_a(t_stack *stack);
+int		swap_b(t_stack *stack);
+int		swap_ab(t_stack *stack);
+// Rotate (ra, rb, rr)
+int		rotate_a(t_stack *stack);
+int		rotate_b(t_stack *stack);
+int		rotate_ab(t_stack *stack);
+// Reverse Rotate (rra, rrb, rrr)
+int		rrotate_a(t_stack *stack);
+int		rrotate_b(t_stack *stack);
+int		rrotate_ab(t_stack *stack);
 
 #endif
