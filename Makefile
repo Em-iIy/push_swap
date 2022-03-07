@@ -3,7 +3,7 @@ FILES_SRCS =	push_swap.c \
 				error_exit.c \
 				parse_input.c \
 				parse_input_binary.c \
-				list_utils.c \
+				node_utils.c \
 				op_push.c \
 				op_swap.c \
 				op_rotate.c \
@@ -31,7 +31,7 @@ LIBFT = $(DIR_LIBFT)libft.a
 CC = gcc
 # CFLAGS = -Wall -Wextra -Werror
 CFLAGS += -g
-INC = -Ilibft
+INC = -Iinc
 
 #----------------------------------------Name
 NAME = push_swap
