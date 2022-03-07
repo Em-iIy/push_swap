@@ -25,7 +25,7 @@ endif
 
 # Compiling info
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -I../inc
 NAME	= libft.a
 
 # Compiling
