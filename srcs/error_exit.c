@@ -6,7 +6,7 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 15:57:40 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/02/23 17:04:36 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/07 17:55:31 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 
 void	error_exit(int code)
 {
-	ft_putstr_fd("Error:\n", 1);
+	ft_putstr_fd("Error\n", 2);
 	if (code == MALLOC_ERROR)
-		ft_putstr_fd("Ran out of memory", 1);
+		ft_putstr_fd("Ran out of memory", 2);
 	else if (code == TOO_FEW_ARGUMENTS)
-		ft_putstr_fd("Too few arguments", 1);
+		ft_putstr_fd("Too few arguments", 2);
+	else if (code == INVALID_ARGUMENT)
+		ft_putstr_fd("Please input numbers only", 2);
 	exit(code);
 }
