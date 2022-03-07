@@ -6,7 +6,7 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:27:52 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/03 19:05:26 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/07 15:38:43 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 enum e_error
 {
 	MALLOC_ERROR = -1,
-	TOO_FEW_ARGUMENTS = 1
+	TOO_FEW_ARGUMENTS = 1,
+	INVALID_ARGUMENT = 2
 };
 
 // Operation names
@@ -40,7 +41,8 @@ enum e_op
 
 typedef struct s_node
 {
-	char			*num;
+	int				num;
+	int				idx;
 	struct s_node	*next;
 }	t_node;
 
@@ -55,7 +57,7 @@ typedef struct s_stack
 void	error_exit(int code);
 
 // Node utils
-t_node	*node_new(char *num);
+t_node	*node_new(int num);
 t_node	*node_last(t_node *node);
 void	node_add_back(t_node **node, t_node *new);
 void	node_add_front(t_node **node, t_node *new);
