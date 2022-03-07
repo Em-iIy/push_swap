@@ -6,7 +6,7 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 18:20:27 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/03 19:04:53 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/07 14:38:35 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ static char	*print_op(int code)
 		ret = ft_strdup("rrb\n");
 	else if (code == OP_RRR)
 		ret = ft_strdup("rrr\n");
-	ft_putstr_fd(ret, 1);
 	return (ret);
 }
 
