@@ -6,15 +6,18 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 13:43:27 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/02/22 17:56:57 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/07 18:06:03 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+#include <limits.h>
+
 int	ft_atoi(const char *str)
 {
-	int	ret_int;
-	int	i;
-	int	neg;
+	long	ret_int;
+	int		i;
+	int		neg;
 
 	ret_int = 0;
 	i = 0;
@@ -31,6 +34,8 @@ int	ft_atoi(const char *str)
 	{
 		ret_int *= 10;
 		ret_int += str[i] - '0';
+		if (ret_int * neg > INT_MAX || ret_int * neg < INT_MIN)
+			error_exit(10);
 		i++;
 	}
 	return (ret_int * neg);
