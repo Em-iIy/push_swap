@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_utils.c                                       :+:      :+:    :+:   */
+/*   node_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 12:56:05 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/03 18:28:30 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/07 15:37:44 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h> // remove
 
-t_node	*node_new(char *num)
+t_node	*node_new(int num)
 {
 	t_node	*head;
 
@@ -22,6 +22,7 @@ t_node	*node_new(char *num)
 	if (!head)
 		error_exit(MALLOC_ERROR);
 	head->num = num;
+	head->idx = -1;
 	head->next = NULL;
 	return (head);
 }
