@@ -6,7 +6,7 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 15:57:40 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/07 17:55:31 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/08 16:34:24 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ void	error_exit(int code)
 		ft_putstr_fd("Too few arguments", 2);
 	else if (code == INVALID_ARGUMENT)
 		ft_putstr_fd("Please input numbers only", 2);
+	else if (code == DUPLICATE_ARGUMENT)
+		ft_putstr_fd("Duplicate numbers", 2);
 	exit(code);
 }

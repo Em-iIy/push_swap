@@ -6,7 +6,7 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:27:52 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/08 11:12:37 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/08 16:33:46 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ enum e_error
 {
 	MALLOC_ERROR = -1,
 	TOO_FEW_ARGUMENTS = 1,
-	INVALID_ARGUMENT = 2
+	INVALID_ARGUMENT = 2,
+	DUPLICATE_ARGUMENT = 3
 };
 
 // Operation names
@@ -86,9 +87,13 @@ int		rrotate_b(t_stack *stack);
 int		rrotate_ab(t_stack *stack);
 
 // Sorting
+// check if stack is sorted
+int		is_sorted(t_stack stack);
 // short stacks (3 to 5)
 void	sort_three(t_stack *stack);
-void	sort_four(t_stack *stack);
+void	sort_four(t_stack *stack, int idx);
 void	sort_five(t_stack *stack);
+
+void	print_stack(t_stack stack);
 
 #endif
