@@ -10,7 +10,9 @@ FILES_SRCS =	push_swap.c \
 				op_rrotate.c \
 				op_choose.c \
 				sort_short.c \
-
+				print_stack.c \
+				is_sorted.c \
+				
 FILES_OBJS = $(FILES_SRCS:.c=.o)
 
 #----------------------------------------Directories

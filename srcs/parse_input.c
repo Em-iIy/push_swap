@@ -6,13 +6,36 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:10:21 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/08 11:12:59 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/08 16:39:15 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 #include <stdio.h> // remove
+
+static void	check_num(int argc, char **argv)
+{
+	int		i;
+	int		j;
+	char	tmp;
+
+	i = 1;
+	while (i < argc)
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			tmp = argv[i][j];
+			if (tmp == '-' && !ft_isdigit(argv[i][j + 1]))
+				error_exit(INVALID_ARGUMENT);
+			else if (tmp != '-' && !ft_isdigit(tmp))
+				error_exit(INVALID_ARGUMENT);
+			j++;
+		}
+		i++;
+	}
+}
 
 static void	indexing(t_node **stack_a, int argc)
 {
@@ -40,44 +63,6 @@ static void	indexing(t_node **stack_a, int argc)
 	}
 }
 
-/**
- * @brief 		Checks the splitted input string for chars other than digits
- * 					exits with error (INVALID_ARGUMENT)
- * 
- * @param str 	Splitted input string
- */
-static void	check_num(int argc, char **argv)
-{
-	int		i;
-	int		j;
-	char	tmp;
-
-	i = 1;
-	while (i < argc)
-	{
-		j = 0;
-		while (argv[i][j])
-		{
-			tmp = argv[i][j];
-			if (tmp == '-' && !ft_isdigit(argv[i][j + 1]))
-				error_exit(INVALID_ARGUMENT);
-			else if (tmp != '-' && !ft_isdigit(tmp))
-				error_exit(INVALID_ARGUMENT);
-			j++;
-		}
-		i++;
-	}
-}
-
-/**
- * @brief 			Takes the user input, splits it up and fills up the stack_a
- * 						linked list will work with strings containing multiple
- * 						numbers separated by spaces
- * 
- * @param stack_a 	The stack to fill
- * @param argc 		Number of args
- * @param argv 		Args
- */
 static void	fill_stack_a(t_node **stack_a, int argc, char **argv)
 {
 	int	i;
@@ -89,6 +74,23 @@ static void	fill_stack_a(t_node **stack_a, int argc, char **argv)
 		i++;
 	}
 	indexing(stack_a, argc);
+}
+
+void	check_dup(t_node *stack_a)
+{
+	t_node	*i;
+
+	while (stack_a->next)
+	{
+		i = stack_a->next;
+		while (i)
+		{
+			if (stack_a->num == i->num)
+				error_exit(DUPLICATE_ARGUMENT);
+			i = i->next;
+		}
+		stack_a = stack_a->next;
+	}
 }
 
 void	parse_input(t_stack *stack, int argc, char **argv)
@@ -103,16 +105,18 @@ void	parse_input(t_stack *stack, int argc, char **argv)
 	if (argc == 2)
 		exit (0);
 	fill_stack_a(&stack->stack_a, argc, argv);
+	check_dup(stack->stack_a);
+	print_stack(*stack);
 	if (argc - 1 == 3)
 		sort_three(stack);
 	else if (argc - 1 == 4)
-		sort_four(stack);
+		sort_four(stack, 0);
 	else if (argc - 1 == 5)
 		sort_five(stack);
+	if (!is_sorted(*stack))
+		printf("NOT SORTED!!! >:(\n");
+	print_stack(*stack);
 }
-
-
-
 
 // largest = parse_input_bin(argc, argv);
 // printf("largest:%d\n", largest);
