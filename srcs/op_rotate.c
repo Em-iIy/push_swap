@@ -6,7 +6,7 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 11:23:01 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/03 18:53:09 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/08 10:44:36 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	rotate_a(t_stack *stack)
 	stack->stack_a = stack->stack_a->next;
 	temp->next = NULL;
 	node_add_back(&stack->stack_a, temp);
-	return (0);
+	return (1);
 }
 
 int	rotate_b(t_stack *stack)
@@ -35,7 +35,7 @@ int	rotate_b(t_stack *stack)
 	stack->stack_b = stack->stack_b->next;
 	temp->next = NULL;
 	node_add_back(&stack->stack_b, temp);
-	return (0);
+	return (1);
 }
 
 int	rotate_ab(t_stack *stack)

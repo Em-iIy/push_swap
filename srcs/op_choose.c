@@ -6,7 +6,7 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 18:20:27 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/07 14:38:35 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/08 10:34:10 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,15 @@ static int	choose(t_stack *stack, int code)
 
 char	*choose_op(t_stack *stack, int code)
 {
+	char	*temp;
+
 	if (choose(stack, code))
-		return (print_op(code));
+	{
+		temp = print_op(code);
+		if (!temp)
+			error_exit(MALLOC_ERROR);
+		ft_putstr_fd(temp, 1);
+		free(temp);
+	}
 	return (0);
 }

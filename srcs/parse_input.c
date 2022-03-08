@@ -6,7 +6,7 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:10:21 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/07 17:53:42 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/08 11:12:59 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,19 +103,29 @@ void	parse_input(t_stack *stack, int argc, char **argv)
 	if (argc == 2)
 		exit (0);
 	fill_stack_a(&stack->stack_a, argc, argv);
-	largest = parse_input_bin(argc, argv);
-	printf("largest:%d\n", largest);
-	while (i < argc)
-	{
-		printf("%s:\t", argv[i]);
-		input = ft_atoi(argv[i]);
-		j = largest;
-		while (j > 0)
-		{
-			j--;
-			printf("%d", (input >> j) & 1);
-		}
-		printf("\n");
-		i++;
-	}
+	if (argc - 1 == 3)
+		sort_three(stack);
+	else if (argc - 1 == 4)
+		sort_four(stack);
+	else if (argc - 1 == 5)
+		sort_five(stack);
 }
+
+
+
+
+// largest = parse_input_bin(argc, argv);
+// printf("largest:%d\n", largest);
+// while (i < argc)
+// {
+// 	printf("%s:\t", argv[i]);
+// 	input = ft_atoi(argv[i]);
+// 	j = largest;
+// 	while (j > 0)
+// 	{
+// 		j--;
+// 		printf("%d", (input >> j) & 1);
+// 	}
+// 	printf("\n");
+// 	i++;
+// }

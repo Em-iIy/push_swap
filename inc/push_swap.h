@@ -6,7 +6,7 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:27:52 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/07 15:38:43 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/08 11:12:37 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,11 @@ int		rotate_ab(t_stack *stack);
 int		rrotate_a(t_stack *stack);
 int		rrotate_b(t_stack *stack);
 int		rrotate_ab(t_stack *stack);
+
+// Sorting
+// short stacks (3 to 5)
+void	sort_three(t_stack *stack);
+void	sort_four(t_stack *stack);
+void	sort_five(t_stack *stack);
 
 #endif
