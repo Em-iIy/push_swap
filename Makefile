@@ -1,3 +1,13 @@
+#----------------------------------------Name
+NAME = push_swap
+
+# ---------------------------------------Colors
+ESC = \033
+NORMAL = $(ESC)[m\017
+BOLD = $(ESC)[1m
+GREEN = $(ESC)[0;92m$(BOLD)
+BLUE = $(ESC)[0;94m$(BOLD)
+
 #----------------------------------------Files
 FILES_SRCS =	push_swap.c \
 				error_exit.c \
@@ -12,7 +22,7 @@ FILES_SRCS =	push_swap.c \
 				sort_long.c \
 				is_sorted.c \
 				sorting.c \
-				
+
 FILES_OBJS = $(FILES_SRCS:.c=.o)
 
 #----------------------------------------Directories
@@ -36,11 +46,9 @@ CFLAGS = -Wall -Wextra -Werror
 # CFLAGS += -g
 INC = -Iinc
 
-#----------------------------------------Name
-NAME = push_swap
-
 #----------------------------------------Making
 all: $(NAME)
+	@echo "$(GREEN)push_swap made$(NORMAL)"
 
 $(NAME): $(DIR_OBJS) $(LIBFT) $(OBJS) 
 	@$(CC) $(CFLAGS) $(INC) $(OBJS) $(LIBFT) -o $(NAME)
@@ -54,7 +62,7 @@ $(DIR_OBJS):
 
 #------------------------------Libraries
 $(LIBFT):
-	@echo "Compiling libft..."
+	@echo "$(BLUE)Compiling libft...$(NORMAL)"
 	@make -C $(DIR_LIBFT)
 
 #----------------------------------------Cleaning
@@ -72,3 +80,4 @@ re: fclean all
 
 re_all: fclean_all all
 
+.PHONY: all clean fclean fclean_all re re_all
