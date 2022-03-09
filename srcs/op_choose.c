@@ -6,46 +6,42 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 18:20:27 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/08 16:39:32 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/09 15:42:40 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
-static char	*print_op(int code)
+static char	*op_str(int code)
 {
-	char	*ret;
-
 	if (code == OP_PA)
-		ret = ft_strdup("pa\n");
+		return (ft_strdup("pa\n"));
 	else if (code == OP_PB)
-		ret = ft_strdup("pb\n");
+		return (ft_strdup("pb\n"));
 	else if (code == OP_SA)
-		ret = ft_strdup("sa\n");
+		return (ft_strdup("sa\n"));
 	else if (code == OP_SB)
-		ret = ft_strdup("sb\n");
+		return (ft_strdup("sb\n"));
 	else if (code == OP_SS)
-		ret = ft_strdup("ss\n");
+		return (ft_strdup("ss\n"));
 	else if (code == OP_RA)
-		ret = ft_strdup("ra\n");
+		return (ft_strdup("ra\n"));
 	else if (code == OP_RB)
-		ret = ft_strdup("rb\n");
+		return (ft_strdup("rb\n"));
 	else if (code == OP_RR)
-		ret = ft_strdup("rr\n");
+		return (ft_strdup("rr\n"));
 	else if (code == OP_RRA)
-		ret = ft_strdup("rra\n");
+		return (ft_strdup("rra\n"));
 	else if (code == OP_RRB)
-		ret = ft_strdup("rrb\n");
+		return (ft_strdup("rrb\n"));
 	else if (code == OP_RRR)
-		ret = ft_strdup("rrr\n");
-	return (ret);
+		return (ft_strdup("rrr\n"));
+	return (NULL);
 }
 
 static int	choose(t_stack *stack, int code)
 {
-	int	res;
-
 	if (code == OP_PA)
 		return (push_a(stack));
 	else if (code == OP_PB)
@@ -71,17 +67,18 @@ static int	choose(t_stack *stack, int code)
 	return (0);
 }
 
-char	*choose_op(t_stack *stack, int code)
+int	choose_op(t_stack *stack, int code)
 {
 	char	*temp;
 
 	if (choose(stack, code))
 	{
-		temp = print_op(code);
+		temp = op_str(code);
 		if (!temp)
 			error_exit(MALLOC_ERROR);
 		ft_putstr_fd(temp, 1);
 		free(temp);
+		return (1);
 	}
 	return (0);
 }
