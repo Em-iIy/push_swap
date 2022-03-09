@@ -6,13 +6,12 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:10:21 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/08 16:39:15 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/09 15:40:12 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "push_swap.h"
-#include <stdio.h> // remove
+#include "libft.h"
 
 static void	check_num(int argc, char **argv)
 {
@@ -76,7 +75,7 @@ static void	fill_stack_a(t_node **stack_a, int argc, char **argv)
 	indexing(stack_a, argc);
 }
 
-void	check_dup(t_node *stack_a)
+static void	check_dup(t_node *stack_a)
 {
 	t_node	*i;
 
@@ -95,41 +94,9 @@ void	check_dup(t_node *stack_a)
 
 void	parse_input(t_stack *stack, int argc, char **argv)
 {
-	int	i;
-	int	j;
-	int	largest;
-	int	input;
-
-	i = 1;
 	check_num(argc, argv);
 	if (argc == 2)
 		exit (0);
 	fill_stack_a(&stack->stack_a, argc, argv);
 	check_dup(stack->stack_a);
-	print_stack(*stack);
-	if (argc - 1 == 3)
-		sort_three(stack);
-	else if (argc - 1 == 4)
-		sort_four(stack, 0);
-	else if (argc - 1 == 5)
-		sort_five(stack);
-	if (!is_sorted(*stack))
-		printf("NOT SORTED!!! >:(\n");
-	print_stack(*stack);
 }
-
-// largest = parse_input_bin(argc, argv);
-// printf("largest:%d\n", largest);
-// while (i < argc)
-// {
-// 	printf("%s:\t", argv[i]);
-// 	input = ft_atoi(argv[i]);
-// 	j = largest;
-// 	while (j > 0)
-// 	{
-// 		j--;
-// 		printf("%d", (input >> j) & 1);
-// 	}
-// 	printf("\n");
-// 	i++;
-// }
