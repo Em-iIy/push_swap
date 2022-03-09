@@ -6,13 +6,12 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 12:56:05 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/07 15:37:44 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/09 15:43:34 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
-#include <stdio.h> // remove
 
 t_node	*node_new(int num)
 {
@@ -50,17 +49,4 @@ void	node_add_front(t_node **node, t_node *new)
 {
 	new->next = *node;
 	*node = new;
-}
-
-size_t	node_size(t_node *node)
-{
-	size_t	i;
-
-	i = 0;
-	while (node)
-	{
-		node = node->next;
-		i++;
-	}
-	return (i);
 }
