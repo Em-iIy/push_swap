@@ -2,7 +2,6 @@
 FILES_SRCS =	push_swap.c \
 				error_exit.c \
 				parse_input.c \
-				parse_input_binary.c \
 				node_utils.c \
 				op_push.c \
 				op_swap.c \
@@ -10,8 +9,9 @@ FILES_SRCS =	push_swap.c \
 				op_rrotate.c \
 				op_choose.c \
 				sort_short.c \
-				print_stack.c \
+				sort_long.c \
 				is_sorted.c \
+				sorting.c \
 				
 FILES_OBJS = $(FILES_SRCS:.c=.o)
 
@@ -32,8 +32,8 @@ LIBFT = $(DIR_LIBFT)libft.a
 
 #----------------------------------------Flags
 CC = gcc
-# CFLAGS = -Wall -Wextra -Werror
-CFLAGS += -g
+CFLAGS = -Wall -Wextra -Werror
+# CFLAGS += -g
 INC = -Iinc
 
 #----------------------------------------Name

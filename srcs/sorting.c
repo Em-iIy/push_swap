@@ -6,7 +6,7 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 10:12:19 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/09 10:29:46 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/09 15:37:33 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,6 @@ void	sorting(t_stack *stack, int stack_len)
 		sort_four(stack, 0);
 	else if (stack_len == 5)
 		sort_five(stack);
+	else
+		sort_long(stack, stack_len);
 }
