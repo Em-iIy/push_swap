@@ -48,10 +48,10 @@ INC = -Iinc
 
 #----------------------------------------Making
 all: $(NAME)
-	@echo "$(GREEN)push_swap made$(NORMAL)"
 
 $(NAME): $(DIR_OBJS) $(LIBFT) $(OBJS) 
 	@$(CC) $(CFLAGS) $(INC) $(OBJS) $(LIBFT) -o $(NAME)
+	@echo "$(GREEN)push_swap made$(NORMAL)"
 
 $(DIR_OBJS)%.o: %.c
 	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
