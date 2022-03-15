@@ -6,7 +6,7 @@
 /*   By: gwinnink <gwinnink@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:10:21 by gwinnink          #+#    #+#             */
-/*   Updated: 2022/03/09 15:40:12 by gwinnink         ###   ########.fr       */
+/*   Updated: 2022/03/15 12:27:31 by gwinnink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,8 @@ static void	check_dup(t_node *stack_a)
 void	parse_input(t_stack *stack, int argc, char **argv)
 {
 	check_num(argc, argv);
+	fill_stack_a(&stack->stack_a, argc, argv);
 	if (argc == 2)
 		exit (0);
-	fill_stack_a(&stack->stack_a, argc, argv);
 	check_dup(stack->stack_a);
 }
